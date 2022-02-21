@@ -20,10 +20,9 @@ jobs:
           command: |
             git submodule init
             git submodule update --remote
-
       - run:
           name: Get toolchain
-          command: curl http://us.davidsingleton.org:9997/oecore-x86_64-cortexa9hf-neon-toolchain-zero-gravitas-1.8-23.9.2019.sh -o install-toolchain.sh
+          command: curl https://storage.googleapis.com/remarkable-codex-toolchain/codex-x86_64-cortexa7hf-neon-rm11x-toolchain-3.1.15.sh -o install-toolchain.sh
 
       - run:
           name: make toolchain executable
@@ -34,7 +33,6 @@ jobs:
           command: |
             locale
             ./install-toolchain.sh
-
       - run:
           name: Install qtcreator
           command: apt-get install -y qtcreator
@@ -50,16 +48,13 @@ jobs:
               export GOPATH=`pwd`/go
               export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
               go get -u github.com/tcnksm/ghr
-
       - run:
           name: Build
           command: |
             curl https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
-            ls /usr/local
-            source /usr/local/oecore-x86_64/environment-setup-cortexa9hf-neon-oe-linux-gnueabi
+            source /opt/codex/rm11x/3.1.15/environment-setup-cortexa7hf-neon-remarkable-linux-gnueabi
             qmake edit.pro -spec linux-oe-g++
             /usr/bin/make
-
       - run:
           name: where are all the files?
           command: find .

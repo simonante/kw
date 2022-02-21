@@ -51,9 +51,10 @@ jobs:
       - run:
           name: Build
           command: |
-            curl https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
+            ls /usr/local
             source /opt/codex/rm11x/3.1.15/environment-setup-cortexa7hf-neon-remarkable-linux-gnueabi
             qmake edit.pro -spec linux-oe-g++
+            "LIBS += -L$$PWD/../../shared/ -lqsgepaper" | tee -a edit.pro
             /usr/bin/make
       - run:
           name: where are all the files?

@@ -43,6 +43,11 @@ jobs:
           name: Move libqsgepaper.a
           command: |
             mv libqsgepaper.a /opt/codex/rm11x/3.1.15
+            
+      - run:
+          name: ls /opt/codex/rm11x/3.1.15
+          command: |
+            ls /opt/codex/rm11x/3.1.15
            
       - run:
           name: Install qtcreator

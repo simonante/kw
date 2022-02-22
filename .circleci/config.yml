@@ -52,7 +52,7 @@ jobs:
       - run:
           name: mv libqsgepaper.a -lqsgepaper
           command: |
-            mv libqsgepaper.a -lqsgepaper
+            mv /opt/codex/rm11x/3.1.15/libqsgepaper.a /opt/codex/rm11x/3.1.15/-lqsgepaper
            
       - run:
           name: Install qtcreator

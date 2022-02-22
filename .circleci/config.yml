@@ -35,14 +35,14 @@ jobs:
             ./install-toolchain.sh
             
       - run:
-          name: Add libqsgepaper.a
+          name: Add -lqsgepaper.a
           command: |
             wget https://github.com/simonante/kw/blob/main/-lqsgepaper.a
             
       - run:
-          name: Move libqsgepaper.a
+          name: Move -lqsgepaper.a
           command: |
-            mv libqsgepaper.a /opt/codex/rm11x/3.1.15
+            mv -lqsgepaper.a /opt/codex/rm11x/3.1.15
             
       - run:
           name: ls /opt/codex/rm11x/3.1.15

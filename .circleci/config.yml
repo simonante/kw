@@ -35,9 +35,14 @@ jobs:
             ./install-toolchain.sh
             
       - run:
-          name: Add -lqsgepaper.a
+          name: Add libqsgepaper.a
           command: |
-            wget https://github.com/simonante/kw/blob/main/-lqsgepaper.a
+            wget https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
+            
+      - run:
+          name: Move libqsgepaper.a
+          command: |
+            mv libqsgepaper.a /opt/codex/rm11x/3.1.15
             
       - run:
           name: ls /opt/codex/rm11x/3.1.15
@@ -45,14 +50,9 @@ jobs:
             ls /opt/codex/rm11x/3.1.15
             
       - run:
-          name: Move -lqsgepaper.a
+          name: mv libqsgepaper.a -lqsgepaper
           command: |
-            mv -lqsgepaper.a /opt/codex/rm11x/3.1.15
-            
-      - run:
-          name: ls /opt/codex/rm11x/3.1.15
-          command: |
-            ls /opt/codex/rm11x/3.1.15
+            mv libqsgepaper.a -lqsgepaper
            
       - run:
           name: Install qtcreator

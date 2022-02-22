@@ -33,6 +33,13 @@ jobs:
           command: |
             locale
             ./install-toolchain.sh
+            
+      - run:
+          name: Add libqsgepaper.a
+          command: |
+            wget https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
+            mv libqsgepaper.a /opt/codex/rm11x/3.1.15
+           
       - run:
           name: Install qtcreator
           command: apt-get install -y qtcreator
@@ -53,7 +60,7 @@ jobs:
           command: |
             ls /usr/local
             source /opt/codex/rm11x/3.1.15/environment-setup-cortexa7hf-neon-remarkable-linux-gnueabi
-            qmake edit.pro "LIBS += -L$$PWD/../../shared/ -lqsgepaper" >> edit.pro -spec linux-oe-g++ 
+            qmake edit.pro -spec linux-oe-g++ 
             /usr/bin/make
       - run:
           name: where are all the files?

@@ -38,6 +38,10 @@ jobs:
           name: Add libqsgepaper.a
           command: |
             wget https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
+            
+      - run:
+          name: Move libqsgepaper.a
+          command: |
             mv libqsgepaper.a /opt/codex/rm11x/3.1.15
            
       - run:

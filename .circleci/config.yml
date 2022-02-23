@@ -53,6 +53,11 @@ jobs:
           name: mv libq
           command: |
             mv libqsgepaper.a /usr/src
+            
+      - run:
+          name: ls
+          command: |
+            ls /usr/src
 
       - run:
           name: Install qtcreator

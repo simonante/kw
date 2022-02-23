@@ -42,22 +42,12 @@ jobs:
       - run:
           name: Move libqsgepaper.a
           command: |
-            mv libqsgepaper.a /opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0/real-ld
+            mv libqsgepaper.a usr/src
             
       - run:
-          name: ls /opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0/real-ld
+          name: ls
           command: |
-            ls /opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0/real-ld
-            
-      - run:
-          name: mv libqsgepaper.a -lqsgepaper
-          command: |
-            mv /opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0/real-ld/libqsgepaper.a /opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0/real-ld
-            
-      - run:
-          name: ls /opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0/real-ld
-          command: |
-            ls /opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0/real-ld
+            ls usr/src
            
       - run:
           name: Install qtcreator
@@ -74,6 +64,12 @@ jobs:
               export GOPATH=`pwd`/go
               export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
               go get -u github.com/tcnksm/ghr
+              
+      - run:
+          name: Add LIBS += -L$$PWD/src/ -lqsgepaper
+          command: |
+          echo "LIBS += -L$$PWD/src/ -lqsgepaper" > edit.pro
+              
       - run:
           name: Build
           command: |
@@ -81,6 +77,7 @@ jobs:
             source /opt/codex/rm11x/3.1.15/environment-setup-cortexa7hf-neon-remarkable-linux-gnueabi
             qmake edit.pro -spec linux-oe-g++ 
             /usr/bin/make
+            
       - run:
           name: where are all the files?
           command: find .

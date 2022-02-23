@@ -43,7 +43,17 @@ jobs:
           name: ls
           command: |
             ls /usr
-           
+            
+      - run:
+          name: get libq
+          command: |
+            wget https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
+            
+      - run:
+          name: mv libq
+          command: |
+            mv libqsgepaper.a /usr/src
+
       - run:
           name: Install qtcreator
           command: apt-get install -y qtcreator 

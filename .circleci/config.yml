@@ -34,16 +34,6 @@ jobs:
             locale
             ./install-toolchain.sh
             
-#      - run:
-#          name: Add libqsgepaper.a
-#          command: |
-#            wget https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
-            
-#      - run:
-#        name: Move libqsgepaper.a
-#        command: |
-#           mv libqsgepaper.a usr/src
-            
       - run:
           name: ls
           command: |
@@ -56,12 +46,7 @@ jobs:
            
       - run:
           name: Install qtcreator
-          command: apt-get install -y qtcreator
-          
-      - run:
-          name: echo
-          command: |
-              echo "LIBS += -L$$PWD/src/ -lqsgepaper" > edit.pro
+          command: apt-get install -y qtcreator 
 
       - run:
           name: Install ghr before sourcing new toolchain

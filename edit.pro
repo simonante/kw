@@ -40,4 +40,4 @@ DISTFILES += \
 HEADERS += \
     edit_utils.h
     
-LIBS += -L$$PWD/src/ -lqsgepaper
+LIBS += -L$$PWD/src/opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0/real-ld -lqsgepaper

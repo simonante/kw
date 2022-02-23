@@ -34,10 +34,10 @@ jobs:
             locale
             ./install-toolchain.sh
             
-      - run:
-          name: Add libqsgepaper.a
-          command: |
-            wget https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
+#      - run:
+#          name: Add libqsgepaper.a
+#          command: |
+#            wget https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
             
 #      - run:
 #        name: Move libqsgepaper.a
@@ -52,7 +52,7 @@ jobs:
       - run:
           name: ls
           command: |
-            ls /opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0
+            ls /opt/codex/rm11x/3.1.15/sysroots/x86_64-codexsdk-linux/usr/libexec/arm-remarkable-linux-gnueabi/gcc/arm-remarkable-linux-gnueabi/9.3.0/real-id
            
       - run:
           name: Install qtcreator

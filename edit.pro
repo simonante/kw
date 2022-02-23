@@ -27,6 +27,7 @@ QML_DESIGNER_IMPORT_PATH =
 
 linux-oe-g++ {
     LIBS += -L$$PWD/src/ -lqsgepaper
+    LIBS += -lqsgepaper
 }
 
 # Default rules for deployment.

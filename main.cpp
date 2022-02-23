@@ -1,6 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QtQuick>
 // Added for reMarkable support
 #include <QtPlugin>
 #ifdef __arm__
@@ -23,16 +22,11 @@ int main(int argc, char *argv[])
     // end reMarkable additions
 
 
-    QString configDir = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
-    qDebug() << configDir ;
-
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
     qmlRegisterType<EditUtils>("io.singleton", 1, 0, "EditUtils");
 
-    engine.rootContext()->setContextProperty("screen", app.primaryScreen()->geometry());
-    engine.rootContext()->setContextProperty("home_dir", configDir);
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;

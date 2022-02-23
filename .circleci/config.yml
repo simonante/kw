@@ -64,18 +64,14 @@ jobs:
               export GOPATH=`pwd`/go
               export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
               go get -u github.com/tcnksm/ghr
-              
-      - run:
-          name: Add LIBS += -L$$PWD/src/ -lqsgepaper
-          command: |
-          echo "LIBS += -L$$PWD/src/ -lqsgepaper" > edit.pro
-              
+                            
       - run:
           name: Build
           command: |
             ls /usr/local
             source /opt/codex/rm11x/3.1.15/environment-setup-cortexa7hf-neon-remarkable-linux-gnueabi
             qmake edit.pro -spec linux-oe-g++ 
+            echo "LIBS += -L$$PWD/src/ -lqsgepaper" > edit.pro
             /usr/bin/make
             
       - run:

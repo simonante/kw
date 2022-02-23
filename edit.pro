@@ -40,4 +40,5 @@ DISTFILES += \
 HEADERS += \
     edit_utils.h
     
+
 LIBS += -L$$PWD/src/ -lqsgepaper

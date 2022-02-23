@@ -39,15 +39,15 @@ jobs:
           command: |
             wget https://github.com/Eeems-Org/oxide/blob/master/shared/libqsgepaper.a
             
-      - run:
-          name: Move libqsgepaper.a
-          command: |
-            mv libqsgepaper.a usr/src
+#      - run:
+#        name: Move libqsgepaper.a
+#        command: |
+#           mv libqsgepaper.a usr/src
             
       - run:
           name: ls
           command: |
-            ls usr/src
+            ls
            
       - run:
           name: Install qtcreator

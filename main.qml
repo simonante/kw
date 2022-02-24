@@ -139,10 +139,10 @@ Window {
             }
 
             function scrollUp() {
-                contentY -= 400;
+                contentY -= 2000;
             }
             function scrollDown() {
-                contentY += 400;
+                contentY += 2000;
             }
 
             TextEdit {

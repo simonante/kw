@@ -139,10 +139,10 @@ Window {
             }
 
             function scrollUp() {
-                contentY -= 4500;
+                contentY -= 8000;
             }
             function scrollDown() {
-                contentY += 4500;
+                contentY += 8000;
             }
 
             TextEdit {
@@ -206,7 +206,7 @@ Window {
             x: 40;
             width:680;
             color: "white";
-            font.pointSize: 24;
+            font.pointSize: 20;
             font.family: "Noto Mono";
             focus: isOmni;
             Keys.enabled: true;

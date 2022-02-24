@@ -10,7 +10,7 @@ Window {
     height: 1872;
 
     property string doc: "# reMarkable key-writer";
-    property int mode: 0;
+    property int mode: 1;
     property bool ctrlPressed: false;
     property bool isOmni: false;
     property string omniQuery: "";
@@ -139,10 +139,10 @@ Window {
             }
 
             function scrollUp() {
-                contentY -= 8000;
+                contentY -= 45000;
             }
             function scrollDown() {
-                contentY += 8000;
+                contentY += 45000;
             }
 
             TextEdit {
@@ -161,7 +161,7 @@ Window {
                 }
                 cursorDelegate: curDelegate;
                 readOnly: mode == 0 ? true : false;
-                font.pointSize: mode == 0 ? 10 : 9;
+                font.pointSize: mode == 0 ? 9 : 9;
 
                 onLinkActivated: {
                     console.log("Link activated: " + link);

@@ -139,10 +139,10 @@ Window {
             }
 
             function scrollUp() {
-                contentY -= 7500;
+                contentY -= 4500;
             }
             function scrollDown() {
-                contentY += 7500;
+                contentY += 4500;
             }
 
             TextEdit {
@@ -182,10 +182,6 @@ Window {
                 Keys.onReleased: {
                     handleKeyUp(event);
                     handleKey(event);
-                }
-
-                onCursorRectangleChanged: {
-                    flick.ensureVisible(cursorRectangle);
                 }
             }
         }

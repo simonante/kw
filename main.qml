@@ -152,7 +152,7 @@ Window {
                 textMargin: 12;
                 width:1404;
                 textFormat: mode == 0 ? TextEdit.RichText : TextEdit.PlainText;
-                font.family: mode == 0 ? "Noto Mono" : "Noto Mono";
+                font.family: mode == 0 ? "Noto Sans" : "Noto Mono";
                 text: mode == 0 ? utils.markdown(doc) : doc;
                 focus: !isOmni;
                 Component {
@@ -160,8 +160,8 @@ Window {
                     Rectangle { width:8; height: 20; visible: query.cursorVisible; color: "black";}
                 }
                 cursorDelegate: curDelegate;
-                readOnly: mode == 0 ? false : false;
-                font.pointSize: mode == 0 ? 9 : 9;
+                readOnly: mode == 0 ? true : false;
+                font.pointSize: mode == 0 ? 10 : 9;
 
                 onLinkActivated: {
                     console.log("Link activated: " + link);
@@ -169,10 +169,10 @@ Window {
                 }
 
                 Keys.onPressed: {
-                    if (mode == 0 && (event.key == Qt.Key_Down || event.key == Qt.Key_Left)) {
+                    if (mode == 1 && (event.key == Qt.Key_Down)) {
                         flick.scrollDown();
                     }
-                    if (mode == 0 && (event.key == Qt.Key_Up || event.key == Qt.Key_Right)) {
+                    if (mode == 1 && (event.key == Qt.Key_Up)) {
                         flick.scrollUp();
                     }
 

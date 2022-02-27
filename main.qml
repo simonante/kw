@@ -118,12 +118,12 @@ Window {
     Rectangle {
         rotation: root.rotation
         id: body
-        width: root.rotation % 180 ? root.height : root.width  * 0.8
-        height: root.rotation % 180 ? root.width  * 0.8 : root.height
+        width: root.rotation % 180 ? root.height * 0.77 : root.width
+        height: root.rotation % 180 ? root.width  * 0.77 : root.height
         anchors.centerIn: parent
         color: "white"
         border.color: "black"
-        border.width: 2
+        border.width: 0
         EditUtils {
             id: utils
         }
@@ -187,17 +187,7 @@ Window {
                 renderType: Text.NativeRendering
                 Component {
                     id: curDelegate
-                    Item {
-                        width: 18
-                        visible: query.cursorVisible
-                        Rectangle {
-                            anchors.bottom: parent.bottom
-                            anchors.bottomMargin: 4
-                            color: "black"
-                            height: 2
-                            width: parent.width
-                        }
-                    }
+                    Rectangle { width:8; height: 20; visible: query.cursorVisible; color: "black";}
                 }
                 cursorDelegate: curDelegate
                 readOnly: mode == 0 ? true : false
@@ -228,10 +218,6 @@ Window {
                 Keys.onReleased: {
                     handleKeyUp(event)
                     handleKey(event)
-                }
-
-                onCursorRectangleChanged: {
-                    flick.ensureVisible(cursorRectangle)
                 }
             }
         }

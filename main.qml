@@ -95,7 +95,7 @@ Window {
             }
         }
 
-        if (mode == 0)
+        if (mode == 1)
             switch (event.key) {
             case Qt.Key_Home:
                 Qt.quit()

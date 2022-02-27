@@ -4,10 +4,11 @@ import Qt.labs.folderlistmodel 1.0
 import io.singleton 1.0
 
 Window {
+    id:root
     visible: true;
     title: qsTr("edit")
-    width: 1404;
-    height: 1872;
+    width: screen.width;
+    height: screen.height;
 
     property int rotation: 0
     property string doc: "# reMarkable key-writer";
@@ -16,6 +17,7 @@ Window {
     property bool isOmni: false;
     property string omniQuery: "";
     property string currentFile: "scratch.md";
+    property string folder: "file:/" + home_dir + "/edit/"
 
     readonly property int dummy: onLoad();
 

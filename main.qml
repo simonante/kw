@@ -132,8 +132,10 @@ Window {
 
         Flickable {
             id: flick
+            anchors.fill: parent
             contentWidth: query.paintedWidth
             contentHeight: query.paintedHeight
+            bottomMargin: parent.height /2
             clip: true
 
             function ensureVisible(r)

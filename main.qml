@@ -4,20 +4,31 @@ import Qt.labs.folderlistmodel 1.0
 import io.singleton 1.0
 
 Window {
-    id:root
     visible: true;
     title: qsTr("edit")
-    width: screen.width;
-    height: screen.height;
+    width: 1404;
+    height: 1872;
 
-    property int rotation: 0
     property string doc: "# reMarkable key-writer";
     property int mode: 1;
     property bool ctrlPressed: false;
     property bool isOmni: false;
     property string omniQuery: "";
     property string currentFile: "scratch.md";
-    property string folder: "file:/" + home_dir + "/edit/"
+
+    EditUtils {
+        id: utils
+    }
+    FolderListModel {
+        folder: "file:///home/root/edit/"
+        id: folderModel
+        nameFilters: ["*.md"]
+    }
+
+    Rectangle {
+        anchors.fill: parent
+        color: "white"
+    }
 
     readonly property int dummy: onLoad();
 
@@ -81,7 +92,7 @@ Window {
     }
 
     function handleKey(event) {
-        if (event.key === Qt.Key_Escape) {
+        if (event.key == Qt.Key_Escape) {
             if (isOmni) {
                 isOmni = false;
             } else {
@@ -90,47 +101,23 @@ Window {
             }
         }
 
-        if (mode == 1)
-             switch(event.key) {
-                 case Qt.Key_Home:
-                     Qt.quit()
-                     break;
-                 case Qt.Key_Right:
-                     if (ctrlPressed)
-                         root.rotation = (root.rotation+90) % 360
-                     break;
-                 case Qt.Key_Left:
-                     if (ctrlPressed)
-                         root.rotation = (root.rotation-90) % 360
-                     break;
-             }
+        if (mode == 0 && event.key == Qt.Key_Home) {
+            isOmni = !isOmni;
+        }
     }
 
     function onLoad() {
         doLoad(currentFile);
         return 0;
     }
-    Rectangle {
-         anchors.fill: parent
-         color: "white"
-     }
 
     Rectangle {
-        rotation: root.rotation
+        rotation: 90
         anchors.top: parent.right
         y: 200
-        width: (root.rotation / 90 ) % 2 ? root.height : root.width
-        height: (root.rotation / 90 ) % 2 ? root.width : root.height
+        width: 1404;
+        height: 1404;
         color: "white"
-        EditUtils {
-             id: utils
-         }
-         FolderListModel {
-             id: folderModel
-             folder: root.folder
-             nameFilters: ["*.md"]
-         }
-
         Flickable {
             id: flick
             width: 1404;
@@ -216,7 +203,7 @@ Window {
     }
     Rectangle {
         id: quick
-        rotation: root.rotation
+        rotation: 90
         anchors.centerIn: parent;
         width: 1000;
         height: 700;

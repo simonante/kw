@@ -10,7 +10,7 @@ Window {
     width: screen.width * 0.8
     height: screen.height
 
-    property int rotation: 0
+    property int rotation: 90
     property string doc: "# reMarkable key-writer"
     property int mode: 0
     property int lastCursorPostion: -1

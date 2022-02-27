@@ -183,10 +183,10 @@ Window {
                     if (mode == 1 && (event.key == Qt.Key_Up)) {
                         flick.scrollUpSmall();
                     }                
-                    if (mode == 1 && (event.key == Qt.Key_W && ctrlPressed)) {
+                    if (mode == 1 && (event.key == Qt.Key_S && ctrlPressed)) {
                         flick.scrollDownBig();
                     }
-                    if (mode == 1 && (event.key == Qt.Key_S && ctrlPressed)) {
+                    if (mode == 1 && (event.key == Qt.Key_W && ctrlPressed)) {
                         flick.scrollUpBig();
                     }
 
@@ -205,8 +205,8 @@ Window {
         id: quick
         rotation: 90
         anchors.centerIn: parent;
-        width: 700;
-        height: 400;
+        width: 1300;
+        height: 1000;
         color: "black"
         visible: isOmni ? true : false;
         radius: 20;

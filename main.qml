@@ -115,8 +115,8 @@ Window {
     Rectangle {
         rotation: root.rotation
         id: body
-        width: root.rotation % 180 ? root.height * 0.77 : root.width
-        height: root.rotation % 180 ? root.width : root.height   * 0.77
+        width: root.rotation % 180 ? root.height * 0.733 : root.width
+        height: root.rotation % 180 ? root.width : root.height   * 0.733
         anchors.centerIn: parent
         color: "white"
         border.color: "black"
@@ -181,7 +181,6 @@ Window {
                 font.family: mode == 0 ? "Noto Sans" : "Noto Mono"
                 text: mode == 0 ? utils.markdown(doc) : doc
                 focus: !isOmni
-                renderType: Text.NativeRendering
                 Component {
                     id: curDelegate
                     Rectangle { width:8; height: 20; visible: query.cursorVisible; color: "black";}
@@ -222,8 +221,8 @@ Window {
         Rectangle {
             id: quick
             anchors.centerIn: parent
-            width: parent.width * 0.5
-            height: parent.height * 0.5
+            width: parent.width * 0.78
+            height: parent.height * 0.78
             color: "black"
             visible: isOmni ? true : false
             radius: 20
@@ -251,7 +250,7 @@ Window {
                         } else {
                             doLoad(omniList.currentItem.text)
                         }
-                        isOmni = false
+                        isOmni = true // isOmni = false
                         event.accepted = true
                         return
                     }

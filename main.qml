@@ -116,7 +116,7 @@ Window {
         rotation: root.rotation
         id: body
         width: root.rotation % 180 ? root.height * 0.733 : root.width
-        height: root.rotation % 180 ? root.width : root.height   * 0.733
+        height: root.rotation % 180 ? root.width : root.height * 0.733
         anchors.centerIn: parent
         color: "white"
         border.color: "black"

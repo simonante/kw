@@ -115,8 +115,8 @@ Window {
     Rectangle {
         rotation: root.rotation
         id: body
-        width: root.rotation % 180 ? root.height * 0.733 : root.width
-        height: root.rotation % 180 ? root.width : root.height * 0.733
+        width: root.rotation % 180 ? root.height * 0.7 : root.width
+        height: root.rotation % 180 ? root.width : root.height * 0.7
         anchors.centerIn: parent
         color: "white"
         border.color: "black"
@@ -140,20 +140,16 @@ Window {
             contentHeight: query.paintedHeight
             clip: true
 
-            function ensureVisible(r) {
-                if (contentX >= r.x) {
-                    contentX = r.x
-                } else if (contentX + width <= r.x + r.width) {
-                    contentX = r.x + r.width - width
-                }
-                if (contentY >= r.y) {
-                    if (r.y-height/2 > 0)
-                        contentY = r.y-height/2
-                    else
-                        contentY = 0
-                } else if (contentY + height <= r.y + r.height) {
-                    contentY = r.y + r.height - height/2
-                }
+            function ensureVisible(r)
+            {
+                if (contentX >= r.x)
+                    contentX = r.x;
+                else if (contentX+width <= r.x+r.width)
+                    contentX = r.x+r.width-width;
+                if (contentY >= r.y)
+                    contentY = r.y;
+                else if (contentY+height <= r.y+r.height)
+                    contentY = r.y+r.height-height;
             }
 
             function scrollUpSmall() {
@@ -222,7 +218,7 @@ Window {
             id: quick
             anchors.centerIn: parent
             width: parent.width * 0.78
-            height: parent.height * 0.78
+            height: parent.height * 0.45
             color: "black"
             visible: isOmni ? true : false
             radius: 20

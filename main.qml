@@ -137,13 +137,21 @@ Window {
                 else if (contentY+height <= r.y+r.height)
                     contentY = r.y+r.height-height;
             }
+            
+            function scrollUpSmall() {
+                contentY -= 400;
+            }
+            function scrollDownSmall() {
+                contentY += 400;
+            }
 
-            function scrollUp() {
+            function scrollUpBig() {
                 contentY -= 45000;
             }
-            function scrollDown() {
+            function scrollDownBig() {
                 contentY += 45000;
             }
+            
 
             TextEdit {
                 id: query;
@@ -170,10 +178,26 @@ Window {
 
                 Keys.onPressed: {
                     if (mode == 1 && (event.key == Qt.Key_Down)) {
-                        flick.scrollDown();
+                        flick.scrollDownSmall();
                     }
                     if (mode == 1 && (event.key == Qt.Key_Up)) {
-                        flick.scrollUp();
+                        flick.scrollUpSmall();
+                    }
+
+                    handleKeyDown(event);
+                }
+
+                Keys.onReleased: {
+                    handleKeyUp(event);
+                    handleKey(event);
+                }
+                
+                Keys.onPressed: {
+                    if (mode == 1 && (event.key == Qt.Key_W && ctrlPressed)) {
+                        flick.scrollDownBig();
+                    }
+                    if (mode == 1 && (event.key == Qt.Key_S && ctrlPressed)) {
+                        flick.scrollUpBig();
                     }
 
                     handleKeyDown(event);

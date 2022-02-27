@@ -182,10 +182,7 @@ Window {
                     }
                     if (mode == 1 && (event.key == Qt.Key_Up)) {
                         flick.scrollUpSmall();
-                    }
-
-                    handleKeyDown(event);
-                
+                    }                
                     if (mode == 1 && (event.key == Qt.Key_W && ctrlPressed)) {
                         flick.scrollDownBig();
                     }

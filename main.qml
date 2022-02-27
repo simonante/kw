@@ -205,8 +205,8 @@ Window {
         id: quick
         rotation: 90
         anchors.centerIn: parent;
-        width: 1300;
-        height: 1000;
+        width: 1000;
+        height: 700;
         color: "black"
         visible: isOmni ? true : false;
         radius: 20;
@@ -218,7 +218,7 @@ Window {
             text: omniQuery;
             textFormat: TextEdit.PlainText;
             x: 40;
-            width:680;
+            width:980;
             color: "white";
             font.pointSize: 20;
             font.family: "Noto Mono";
@@ -253,12 +253,12 @@ Window {
         ListView {
             id: omniList;
             x: 40;
-            width: 600; height: 300;
+            width: 900; height: 600;
             anchors.top: omniQueryTextEdit.bottom;
-            highlight: Rectangle { color: "white"; radius: 5;width: 600; }
+            highlight: Rectangle { color: "white"; radius: 5;width: 900; }
             Component {
                 id: fileDelegate
-                Text { width:600; text: fileName; color: ListView.isCurrentItem ? "black" : "white";}
+                Text { width:900; text: fileName; color: ListView.isCurrentItem ? "black" : "white";}
             }
 
             model: folderModel

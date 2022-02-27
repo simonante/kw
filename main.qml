@@ -115,8 +115,8 @@ Window {
     Rectangle {
         rotation: root.rotation
         id: body
-        width: root.rotation % 180 ? root.height * 0.7 : root.width
-        height: root.rotation % 180 ? root.width : root.height * 0.7
+        width: root.rotation % 180 ? root.height : root.width  * 0.7
+        height: root.rotation % 180 ? root.width : root.height
         anchors.centerIn: parent
         color: "white"
         border.color: "black"

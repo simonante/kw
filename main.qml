@@ -7,7 +7,7 @@ Window {
     id: root
     visible: true
     title: qsTr("edit")
-    width: screen.width * 0.8
+    width: screen.width
     height: screen.height
 
     property int rotation: 90
@@ -118,8 +118,8 @@ Window {
     Rectangle {
         rotation: root.rotation
         id: body
-        width: root.rotation % 180 ? root.height : root.width
-        height: root.rotation % 180 ? root.width : root.height
+        width: root.rotation % 180 ? root.height : root.width  * 0.8
+        height: root.rotation % 180 ? root.width  * 0.8 : root.height
         anchors.centerIn: parent
         color: "white"
         border.color: "black"

@@ -12,8 +12,7 @@ Window {
 
     property int rotation: 90
     property string doc: "# reMarkable key-writer"
-    property int mode: 0
-    property int lastCursorPostion: -1
+    property int mode: 1
     property bool ctrlPressed: false
     property bool isOmni: false
     property string omniQuery: ""
@@ -22,14 +21,12 @@ Window {
 
     function toggleMode() {
         if (mode == 0) {
-            mode = 1
-            query.cursorPosition = lastCursorPostion == -1 ? query.length : lastCursorPostion
+            mode = 1;
         } else {
-            doc = query.text
-            lastCursorPostion = query.cursorPosition
-            mode = 0
+            doc = query.text;
+            mode = 0;
         }
-        saveFile()
+        saveFile();
     }
 
     function doLoad(name) {
@@ -119,7 +116,7 @@ Window {
         rotation: root.rotation
         id: body
         width: root.rotation % 180 ? root.height * 0.77 : root.width
-        height: root.rotation % 180 ? root.width  * 0.77 : root.height
+        height: root.rotation % 180 ? root.width : root.height   * 0.77
         anchors.centerIn: parent
         color: "white"
         border.color: "black"
@@ -225,7 +222,7 @@ Window {
         Rectangle {
             id: quick
             anchors.centerIn: parent
-            width: parent.width * 0.6
+            width: parent.width * 0.5
             height: parent.height * 0.5
             color: "black"
             visible: isOmni ? true : false

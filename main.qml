@@ -115,8 +115,8 @@ Window {
     Rectangle {
         rotation: root.rotation
         id: body
-        width: root.rotation % 180 ? root.height : root.width  * 0.74 //this works in portrait
-        height: root.rotation % 180 ? root.width : root.height * 0.74 //??
+        width: root.rotation % 180 ? root.height * 0.74 : root.width * 0.74 //this works in portrait
+        height: root.rotation % 180 ? root.width : root.height // root.height affects portrait
         anchors.centerIn: parent
         color: "white"
         border.color: "black"
@@ -132,10 +132,7 @@ Window {
 
         Flickable {
             id: flick
-            anchors.fill: parent
             contentWidth: query.paintedWidth
-            bottomMargin: parent.height /2
-
             contentHeight: query.paintedHeight
             clip: true
 

@@ -185,14 +185,7 @@ Window {
                     }
 
                     handleKeyDown(event);
-                }
-
-                Keys.onReleased: {
-                    handleKeyUp(event);
-                    handleKey(event);
-                }
                 
-                Keys.onPressed: {
                     if (mode == 1 && (event.key == Qt.Key_W && ctrlPressed)) {
                         flick.scrollDownBig();
                     }

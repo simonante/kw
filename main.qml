@@ -19,7 +19,7 @@ Window {
     property string currentFile: "scratch.md"
     property string folder: "file://%1/edit/".arg(home_dir)
 
-    function toggleMode() {
+    function toggleMode() { // Switch 0 and 1; edit mode first?; have not tried yet.
         if (mode == 0) {
             mode = 1;
         } else {
@@ -36,7 +36,7 @@ Window {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var response = xhr.responseText
                 isOmni = false
-                mode = 0
+                mode = 1 // first edit mode?
                 currentFile = name
                 doc = response
 
@@ -97,12 +97,12 @@ Window {
             case Qt.Key_Home:
                 Qt.quit()
                 break
-            case Qt.Key_Right:
-                if (ctrlPressed)
+            case Qt.Key_D: // D contra right arrow
+                if (altPressed) // alt contra ctrl
                     root.rotation = (root.rotation + 90) % 360
                 break
-            case Qt.Key_Left:
-                if (ctrlPressed)
+            case Qt.Key_A: // A contra left arrow
+                if (altPressed) // alt contra ctrl
                     root.rotation = (root.rotation - 90) % 360
                 break
             }
@@ -117,7 +117,7 @@ Window {
         id: body
         width: root.rotation % 180 ? root.height * 0.74 : root.width * 0.74 //this works in portrait
         height: root.rotation % 180 ? root.width : root.height // root.height affects portrait
-        anchors.centerIn: parent
+        anchors.centerIn: parent // ?
         color: "white"
         border.color: "black"
         border.width: 0
@@ -135,7 +135,7 @@ Window {
             anchors.fill: parent
             contentWidth: query.paintedWidth
             contentHeight: query.paintedHeight
-            bottomMargin: parent.height /2
+//            bottomMargin: parent.height /2
             clip: true
 
             function ensureVisible(r)
@@ -230,7 +230,7 @@ Window {
                 x: 40
                 width: parent.width - 20
                 color: "white"
-                font.pointSize: 21
+                font.pointSize: 18
                 font.family: "Noto Mono"
                 focus: isOmni
                 Keys.enabled: true

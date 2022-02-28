@@ -106,6 +106,9 @@ Window {
                     root.rotation = (root.rotation - 90) % 360
                 break
             }
+                onCursorRectangleChanged: { // ENT
+                    flick.ensureVisible(cursorRectangle) // ENT
+                }
     }
 
     Component.onCompleted: {

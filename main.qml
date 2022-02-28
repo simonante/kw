@@ -13,7 +13,6 @@ Window {
     property int rotation: 90
     property string doc: "# reMarkable key-writer"
     property int mode: 1
-    property int lastCursorPostion: -1 // ENTELECHY
     property bool ctrlPressed: false
     property bool isOmni: false
     property string omniQuery: ""
@@ -106,7 +105,9 @@ Window {
                 if (ctrlPressed) // ctrl
                     root.rotation = (root.rotation - 90) % 360
                 break
-            query.cursorPosition = lastCursorPostion == -1 ? query.length : lastCursorPostion // ENTELECHY
+            }
+            onCursorRectangleChanged: { / ENT
+                flick.ensureVisible(cursorRectangle) / ENT
             }
     }
 

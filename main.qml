@@ -13,6 +13,7 @@ Window {
     property int rotation: 90
     property string doc: "# reMarkable key-writer"
     property int mode: 1
+    property int lastCursorPostion: -1 // ENTELECHY
     property bool ctrlPressed: false
     property bool isOmni: false
     property string omniQuery: ""

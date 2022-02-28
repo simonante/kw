@@ -106,9 +106,9 @@ Window {
                     root.rotation = (root.rotation - 90) % 360
                 break
             query.cursorPosition = lastCursorPostion == -1 ? query.length : lastCursorPostion // ENTELECHY
-        } else {
+//        } else {
 //            doc = query.text
-            lastCursorPostion = query.cursorPosition // ENTELECHY
+//            lastCursorPostion = query.cursorPosition // ENTELECHY
             }
     }
 

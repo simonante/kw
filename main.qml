@@ -105,6 +105,10 @@ Window {
                 if (ctrlPressed) // ctrl
                     root.rotation = (root.rotation - 90) % 360
                 break
+            query.cursorPosition = lastCursorPostion == -1 ? query.length : lastCursorPostion // ENTELECHY
+        } else {
+//            doc = query.text
+            lastCursorPostion = query.cursorPosition // ENTELECHY
             }
     }
 
@@ -169,7 +173,7 @@ Window {
 //                width: body.width
 //                height: body.height
 //                width:1404;
-                width: root.rotation % 180 ? root.height * 0.74 : root.width // * 0.74
+                width: root.rotation % 180 ? root.height * 0.74 : root.width * 0.74
                 Keys.enabled: true
                 wrapMode: TextEdit.Wrap
                 textMargin: 12

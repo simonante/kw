@@ -98,11 +98,11 @@ Window {
                 Qt.quit()
                 break
             case Qt.Key_H: // H contra right arrow
-                if (altPressed) // alt contra ctrl
+                if (ctrlPressed) // ctrl
                     root.rotation = (root.rotation + 90) % 360
                 break
             case Qt.Key_G: // G contra left arrow
-                if (altPressed) // alt contra ctrl
+                if (ctrlPressed) // ctrl
                     root.rotation = (root.rotation - 90) % 360
                 break
             }

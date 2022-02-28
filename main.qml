@@ -183,7 +183,7 @@ Window {
                 }
                 cursorDelegate: curDelegate
                 readOnly: mode == 0 ? true : false
-                font.pointSize: mode == 0 ? 9 : 8.7
+                font.pointSize: mode == 0 ? 9 : 8
 
                 onLinkActivated: {
                     console.log("Link activated: " + link)

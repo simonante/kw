@@ -169,6 +169,7 @@ Window {
 //                width: body.width
 //                height: body.height
                 width:1404;
+//                width: root.rotation % 180 ? root.height * 0.74 : root.width * 0.74
                 Keys.enabled: true
                 wrapMode: TextEdit.Wrap
                 textMargin: 12
@@ -182,7 +183,7 @@ Window {
                 }
                 cursorDelegate: curDelegate
                 readOnly: mode == 0 ? true : false
-                font.pointSize: mode == 0 ? 9 : 9
+                font.pointSize: mode == 0 ? 9 : 8.5
 
                 onLinkActivated: {
                     console.log("Link activated: " + link)

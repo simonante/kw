@@ -132,7 +132,7 @@ Window {
 
         Flickable {
             id: flick
-//            anchors.fill: parent
+            anchors.fill: parent
             contentWidth: query.paintedWidth
             contentHeight: query.paintedHeight
             bottomMargin: parent.height /2
@@ -166,8 +166,9 @@ Window {
 
             TextEdit {
                 id: query
-                width: body.width // ?
-                height: body.height // ?
+//                width: body.width
+//                height: body.height
+                width:1404;
                 Keys.enabled: true
                 wrapMode: TextEdit.Wrap
                 textMargin: 12

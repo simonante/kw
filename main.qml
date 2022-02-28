@@ -166,8 +166,8 @@ Window {
 
             TextEdit {
                 id: query
-                width: body.width
-                height: body.height
+                width: body.width // ?
+                height: body.height // ?
                 Keys.enabled: true
                 wrapMode: TextEdit.Wrap
                 textMargin: 12

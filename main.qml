@@ -97,11 +97,11 @@ Window {
             case Qt.Key_Home:
                 Qt.quit()
                 break
-            case Qt.Key_D: // D contra right arrow
+            case Qt.Key_H: // H contra right arrow
                 if (altPressed) // alt contra ctrl
                     root.rotation = (root.rotation + 90) % 360
                 break
-            case Qt.Key_A: // A contra left arrow
+            case Qt.Key_G: // G contra left arrow
                 if (altPressed) // alt contra ctrl
                     root.rotation = (root.rotation - 90) % 360
                 break
@@ -132,10 +132,10 @@ Window {
 
         Flickable {
             id: flick
-            anchors.fill: parent
+//            anchors.fill: parent
             contentWidth: query.paintedWidth
             contentHeight: query.paintedHeight
-//            bottomMargin: parent.height /2
+            bottomMargin: parent.height /2
             clip: true
 
             function ensureVisible(r)

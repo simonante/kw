@@ -97,11 +97,11 @@ Window {
             case Qt.Key_Home:
                 Qt.quit()
                 break
-            case Qt.Key_H: // H contra right arrow
+            case Qt.Key_G: // G contra right arrow
                 if (ctrlPressed) // ctrl
                     root.rotation = (root.rotation + 90) % 360
                 break
-            case Qt.Key_G: // G contra left arrow
+            case Qt.Key_H: // H contra left arrow
                 if (ctrlPressed) // ctrl
                     root.rotation = (root.rotation - 90) % 360
                 break
@@ -169,7 +169,7 @@ Window {
 //                width: body.width
 //                height: body.height
 //                width:1404;
-                width: root.rotation % 180 ? root.height * 0.74 : root.width * 0.74
+                width: root.rotation % 180 ? root.height * 0.74 : root.width // * 0.74
                 Keys.enabled: true
                 wrapMode: TextEdit.Wrap
                 textMargin: 12

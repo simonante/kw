@@ -159,9 +159,11 @@ Window {
 
             function scrollUpBig() {
                 contentY -= 45000;
+            saveFile(); // fix savefile?
             }
             function scrollDownBig() {
                 contentY += 45000;
+            saveFile(); // fix savefile?
             }
 
             TextEdit {

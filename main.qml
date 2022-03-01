@@ -75,6 +75,7 @@ Window {
         } else if (event.key === Qt.Key_Q && ctrlPressed) {
             Qt.quit()
         }
+        saveFile(); // new savefile
     }
     function handleKeyUp(event) {
         if (event.key === Qt.Key_Control) {
@@ -159,11 +160,9 @@ Window {
 
             function scrollUpBig() {
                 contentY -= 45000;
-            saveFile(); // fix savefile?
             }
             function scrollDownBig() {
                 contentY += 45000;
-            saveFile(); // fix savefile?
             }
 
             TextEdit {

@@ -21,12 +21,12 @@ Window {
 
     function toggleMode() { // temp: esc to save file; no need for md view
         if (mode == 1) {
-            mode = 1;
+            mode = 1
         } else {
             doc = query.text;
-            mode = 1;
+            mode = 1
         }
-        saveFile();
+        saveFile()
     }
 
     function doLoad(name) {
@@ -160,9 +160,11 @@ Window {
 
             function scrollUpBig() {
                 contentY -= 45000;
+                saveFile()
             }
             function scrollDownBig() {
                 contentY += 45000;
+                saveFile()
             }
 
             TextEdit {

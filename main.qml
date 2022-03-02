@@ -20,11 +20,11 @@ Window {
     property string folder: "file://%1/edit/".arg(home_dir)
 
     function toggleMode() { // temp: esc to save file; no need for md view
-        if (mode == 1) {
+        if (mode == 0) {
             mode = 1
         } else {
             doc = query.text;
-            mode = 1
+            mode = 0
         }
         saveFile()
     }
@@ -176,17 +176,17 @@ Window {
                 Keys.enabled: true
                 wrapMode: TextEdit.Wrap
                 textMargin: 12
-                textFormat: mode == 0 ? TextEdit.RichText : TextEdit.PlainText
-                font.family: mode == 0 ? "Noto Sans" : "Noto Mono"
-                text: mode == 0 ? utils.markdown(doc) : doc
+                textFormat: mode == 0 ? TextEdit.PlainText : TextEdit.PlainText
+                font.family: mode == 0 ? "Noto Mono" : "Noto Mono"
+                text: mode == 0 ? doc : doc
                 focus: !isOmni
                 Component {
                     id: curDelegate
                     Rectangle { width:8; height: 20; visible: query.cursorVisible; color: "black";}
                 }
                 cursorDelegate: curDelegate
-                readOnly: mode == 0 ? true : false
-                font.pointSize: mode == 0 ? 9 : 8
+                readOnly: mode == 0 ? false : false
+                font.pointSize: mode == 0 ? 7.8 : 7.8
 
                 onLinkActivated: {
                     console.log("Link activated: " + link)

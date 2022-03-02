@@ -75,7 +75,7 @@ Window {
         } else if (event.key === Qt.Key_Q && ctrlPressed) {
             Qt.quit()
         }
-//        saveFile();
+        saveFile()
     }
     function handleKeyUp(event) {
         if (event.key === Qt.Key_Control) {

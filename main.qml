@@ -19,12 +19,12 @@ Window {
     property string currentFile: "scratch.md"
     property string folder: "file://%1/edit/".arg(home_dir)
 
-    function toggleMode() { // Switch 0 and 1; edit mode first?; have not tried yet.
-        if (mode == 0) {
+    function toggleMode() { // temp: esc to save file; no need for md view
+        if (mode == 1) {
             mode = 1;
         } else {
             doc = query.text;
-            mode = 0;
+            mode = 1;
         }
         saveFile();
     }
@@ -75,7 +75,7 @@ Window {
         } else if (event.key === Qt.Key_Q && ctrlPressed) {
             Qt.quit()
         }
-        saveFile(); // new savefile
+//        saveFile();
     }
     function handleKeyUp(event) {
         if (event.key === Qt.Key_Control) {

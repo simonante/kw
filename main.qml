@@ -234,7 +234,7 @@ Window {
                 text: omniQuery
                 textFormat: TextEdit.PlainText
                 x: 40
-                width: parent.width - 450
+                width: parent.width
                 color: "white"
                 font.pointSize: 7.7
                 font.family: "Noto Mono"
@@ -271,7 +271,7 @@ Window {
                 anchors.top: omniQueryTextEdit.bottom
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
-                anchors.leftMargin: 40
+                anchors.leftMargin: 450
                 anchors.rightMargin: 40
                 anchors.right: parent.right
                 highlightResizeDuration: 0

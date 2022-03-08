@@ -220,8 +220,8 @@ Window {
         Rectangle {
             id: quick
             anchors.centerIn: parent
-            width: parent.width * 0.7
-            height: parent.height * 0.82
+            width: parent.width * 0.8
+            height: parent.height * 0.6
             color: "black"
             visible: isOmni ? true : false
             radius: 20
@@ -232,7 +232,7 @@ Window {
                 id: omniQueryTextEdit
                 text: omniQuery
                 textFormat: TextEdit.PlainText
-                x: 20
+                x: 40
                 width: parent.width - 20
                 color: "white"
                 font.pointSize: 8

@@ -19,6 +19,13 @@ Window {
     property string currentFile: "scratch.md"
 //    property string folder: "file://%1/edit/".arg(home_dir)
 
+    FolderListModel {
+        id: folderModel
+//            folder: root.folder
+        folder: "file:///home/root/edit/"
+        nameFilters: ["*.md"]
+    }
+
     function toggleMode() { // temp: esc to save file; no need for md view
         if (mode == 0) {
             mode = 1
@@ -125,12 +132,6 @@ Window {
         border.width: 0
         EditUtils {
             id: utils
-        }
-        FolderListModel {
-            id: folderModel
-//            folder: root.folder
-            folder: "file:///home/root/edit/"
-            nameFilters: ["*.md"]
         }
 
         Flickable {

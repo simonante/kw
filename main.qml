@@ -58,7 +58,7 @@ Window {
 
     function initFile(name) {
         console.log("Init " + name)
-        var fileUrl = folder + name + ".md"
+        var fileUrl = "file:///home/root/edit/" + name + ".md"
         var request = new XMLHttpRequest()
         request.open("PUT", fileUrl, false)
         request.send("# " + name)

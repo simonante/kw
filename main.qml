@@ -220,8 +220,8 @@ Window {
         Rectangle {
             id: quick
             anchors.centerIn: parent
-            width: parent.width * 0.78
-            height: parent.height * 0.45
+            width: parent.width * 0.67
+            height: parent.height * 0.9
             color: "black"
             visible: isOmni ? true : false
             radius: 20
@@ -235,7 +235,7 @@ Window {
                 x: 40
                 width: parent.width - 20
                 color: "white"
-                font.pointSize: 18
+                font.pointSize: 7
                 font.family: "Noto Mono"
                 focus: isOmni
                 Keys.enabled: true

@@ -23,7 +23,6 @@ Window {
         id: folderModel
 //            folder: root.folder
         rootFolder: "file:///home/root/edit/"
-        showDirs: true
         nameFilters: ["*.md"]
     }
 

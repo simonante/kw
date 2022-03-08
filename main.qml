@@ -189,7 +189,7 @@ Window {
                 }
                 cursorDelegate: curDelegate
                 readOnly: mode == 0 ? false : false
-                font.pointSize: mode == 0 ? 7.7 : 7.7
+                font.pointSize: mode == 0 ? 7.5 : 7.5
 
                 onLinkActivated: {
                     console.log("Link activated: " + link)
@@ -271,7 +271,7 @@ Window {
                 anchors.top: omniQueryTextEdit.bottom
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
-                anchors.leftMargin: 450
+                anchors.leftMargin: 220
                 anchors.rightMargin: 40
                 anchors.right: parent.right
                 highlightResizeDuration: 0
@@ -285,7 +285,7 @@ Window {
                     Text {
                         width: parent.width
                         text: fileName
-                        font.pointSize: 7.7
+                        font.pointSize: 7.5
                         font.family: "Noto Mono"
                         color: ListView.isCurrentItem ? "white" : "black"
                     }

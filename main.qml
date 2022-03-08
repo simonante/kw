@@ -17,7 +17,7 @@ Window {
     property bool isOmni: false
     property string omniQuery: ""
     property string currentFile: "scratch.md"
-    property string folder: "file://%1/edit/".arg(home_dir)
+//    property string folder: "file://%1/edit/".arg(home_dir)
 
     function toggleMode() { // temp: esc to save file; no need for md view
         if (mode == 0) {

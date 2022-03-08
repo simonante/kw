@@ -186,7 +186,7 @@ Window {
                 }
                 cursorDelegate: curDelegate
                 readOnly: mode == 0 ? false : false
-                font.pointSize: mode == 0 ? 7.8 : 7.8
+                font.pointSize: mode == 0 ? 7.7 : 7.7
 
                 onLinkActivated: {
                     console.log("Link activated: " + link)
@@ -220,8 +220,8 @@ Window {
         Rectangle {
             id: quick
             anchors.centerIn: parent
-            width: parent.width * 0.67
-            height: parent.height * 0.9
+            width: parent.width * 0.7
+            height: parent.height * 0.82
             color: "black"
             visible: isOmni ? true : false
             radius: 20
@@ -232,7 +232,7 @@ Window {
                 id: omniQueryTextEdit
                 text: omniQuery
                 textFormat: TextEdit.PlainText
-                x: 40
+                x: 20
                 width: parent.width - 20
                 color: "white"
                 font.pointSize: 7

@@ -17,7 +17,7 @@ Window {
     property bool isOmni: false
     property string omniQuery: ""
     property string currentFile: "scratch.md"
-    property string folder: "file://%1/edit/".arg(home_dir)
+//    property string folder: "file://%1/edit/".arg(home_dir)
 
     function toggleMode() { // temp: esc to save file; no need for md view
         if (mode == 0) {
@@ -31,7 +31,8 @@ Window {
 
     function doLoad(name) {
         var xhr = new XMLHttpRequest
-        xhr.open("GET", folder + name)
+//        xhr.open("GET", folder + name)
+        xhr.open("GET", "file:///home/root/edit/**/" + name)
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var response = xhr.responseText
@@ -47,7 +48,7 @@ Window {
 
     function saveFile() {
         console.log("Save " + currentFile)
-        var fileUrl = folder + currentFile
+        var fileUrl = "file:///home/root/edit/" + currentFile
         console.log(fileUrl)
         var request = new XMLHttpRequest()
         request.open("PUT", fileUrl, false)

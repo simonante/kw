@@ -22,7 +22,7 @@ Window {
     FolderListModel {
         id: folderModel
 //            folder: root.folder
-        folder: "file:///home/root/edit/"
+        folder: "file:///home/root/"
         nameFilters: ["*.md"]
     }
 

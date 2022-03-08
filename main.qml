@@ -271,7 +271,7 @@ Window {
                 anchors.top: omniQueryTextEdit.bottom
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
-                anchors.leftMargin: 220
+                anchors.leftMargin: 68
                 anchors.rightMargin: 40
                 anchors.right: parent.right
                 highlightResizeDuration: 0

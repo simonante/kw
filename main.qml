@@ -235,7 +235,7 @@ Window {
                 x: 20
                 width: parent.width - 20
                 color: "white"
-                font.pointSize: 7
+                font.pointSize: 8
                 font.family: "Noto Mono"
                 focus: isOmni
                 Keys.enabled: true
@@ -276,7 +276,7 @@ Window {
                 highlightResizeDuration: 0
                 highlight: Rectangle {
                     color: "white"
-                    radius: 5
+                    radius: 2
                     width: 600
                 }
                 Component {

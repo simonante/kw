@@ -284,8 +284,8 @@ Window {
                     Text {
                         width: parent.width
                         text: fileName
-                        font.pointSize: 8 // test
-                        font.family: "Noto Mono" // test
+                        font.pointSize: 7.7
+                        font.family: "Noto Mono"
                         color: ListView.isCurrentItem ? "black" : "white"
                     }
                 }

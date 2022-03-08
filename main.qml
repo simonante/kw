@@ -22,8 +22,8 @@ Window {
     FolderListModel {
         id: folderModel
 //            folder: root.folder
-        folder: "file:///home/root/edit/"
-//        showDirs: true
+        rootFolder: "file:///home/root/edit/"
+        showDirs: true
         nameFilters: ["*.md"]
     }
 

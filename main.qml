@@ -225,7 +225,7 @@ Window {
             anchors.centerIn: parent
             width: parent.width
             height: parent.height
-            color: "black"
+            color: "white"
             visible: isOmni ? true : false
             radius: 20
 
@@ -276,7 +276,7 @@ Window {
                 anchors.right: parent.right
                 highlightResizeDuration: 0
                 highlight: Rectangle {
-                    color: "white"
+                    color: "black"
                     radius: 2
                     width: 600
                 }
@@ -287,7 +287,7 @@ Window {
                         text: fileName
                         font.pointSize: 7.7
                         font.family: "Noto Mono"
-                        color: ListView.isCurrentItem ? "black" : "white"
+                        color: ListView.isCurrentItem ? "white" : "black"
                     }
                 }
 

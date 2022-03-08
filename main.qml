@@ -32,7 +32,7 @@ Window {
     function doLoad(name) {
         var xhr = new XMLHttpRequest
 //        xhr.open("GET", folder + name)
-        xhr.open("GET", "file:///home/root/edit/**/" + name)
+        xhr.open("GET", "file:///home/root/edit/" + name)
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var response = xhr.responseText

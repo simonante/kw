@@ -11,7 +11,7 @@ Window {
     height: screen.height
 
     property int rotation: 90
-    property string doc: "# reMarkable key-writer"
+    property string doc: "scratch"
     property int mode: 1
     property bool ctrlPressed: false
     property bool isOmni: false

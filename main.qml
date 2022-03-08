@@ -127,7 +127,8 @@ Window {
         }
         FolderListModel {
             id: folderModel
-            folder: root.folder
+//            folder: root.folder
+            folder: "file:///home/root/edit/**/"
             nameFilters: ["*.md"]
         }
 

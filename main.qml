@@ -31,7 +31,8 @@ Window {
 
     function doLoad(name) {
         var xhr = new XMLHttpRequest
-        xhr.open("GET", folder + name)
+//        xhr.open("GET", folder + name)
+        xhr.open("GET", "file:///home/root/edit/*/" + name)
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var response = xhr.responseText
@@ -47,7 +48,8 @@ Window {
 
     function saveFile() {
         console.log("Save " + currentFile)
-        var fileUrl = folder + currentFile
+//        var fileUrl = folder + currentFile
+        var fileUrl = "file:///home/root/edit/*/" + currentFile
         console.log(fileUrl)
         var request = new XMLHttpRequest()
         request.open("PUT", fileUrl, false)
@@ -58,7 +60,8 @@ Window {
 
     function initFile(name) {
         console.log("Init " + name)
-        var fileUrl = folder + name + ".md"
+//        var fileUrl = folder + name + ".md"
+        var fileUrl = "file:///home/root/edit/*/" + name + ".md";
         var request = new XMLHttpRequest()
         request.open("PUT", fileUrl, false)
         request.send("# " + name)

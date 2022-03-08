@@ -223,22 +223,20 @@ Window {
         Rectangle {
             id: quick
             anchors.centerIn: parent
-            width: parent.width * 0.8
-            height: parent.height * 0.6
+            width: parent.width
+            height: parent.height
             color: "black"
             visible: isOmni ? true : false
             radius: 20
-            border.width: 5
-            border.color: "gray"
 
             TextEdit {
                 id: omniQueryTextEdit
                 text: omniQuery
                 textFormat: TextEdit.PlainText
                 x: 40
-                width: parent.width - 20
+                width: parent.width - 450
                 color: "white"
-                font.pointSize: 8
+                font.pointSize: 7.7
                 font.family: "Noto Mono"
                 focus: isOmni
                 Keys.enabled: true

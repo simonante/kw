@@ -22,8 +22,9 @@ Window {
     FolderListModel {
         id: folderModel
 //            folder: root.folder
-        folder: "file:///home/root/**/*.md"
+        folder: "file:///home/root/edit/"
         nameFilters: ["*.md"]
+        showDirs: true
     }
 
     function toggleMode() { // temp: esc to save file; no need for md view

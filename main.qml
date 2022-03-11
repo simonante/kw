@@ -189,7 +189,7 @@ Window {
                 }
                 cursorDelegate: curDelegate
                 readOnly: mode == 0 ? false : false
-                font.pointSize: mode == 0 ? 7.5 : 7.5
+                font.pointSize: mode == 0 ? 7.2 : 7.2
 
                 onLinkActivated: {
                     console.log("Link activated: " + link)
@@ -285,7 +285,7 @@ Window {
                     Text {
                         width: parent.width
                         text: fileName
-                        font.pointSize: 7.5
+                        font.pointSize: 7.2
                         font.family: "Noto Mono"
                         color: ListView.isCurrentItem ? "white" : "black"
                     }

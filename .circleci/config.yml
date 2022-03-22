@@ -63,8 +63,8 @@ jobs:
           command: find .
 
       - store_artifacts:
-          path: edit
-          destination: edit
+          path: keywriter
+          destination: keywriter
 
       - run:
           name: Ship tagged build artifacts to github

@@ -180,7 +180,7 @@ Window {
                 wrapMode: TextEdit.Wrap
                 textMargin: 12
                 textFormat: mode == 0 ? TextEdit.PlainText : TextEdit.PlainText
-                font.family: mode == 0 ? "Noto Mono" : "Noto Mono"
+                font.family: mode == 0 ? "Georgia" : "Georgia"
                 text: mode == 0 ? doc : doc
                 focus: !isOmni
                 Component {
@@ -189,7 +189,7 @@ Window {
                 }
                 cursorDelegate: curDelegate
                 readOnly: mode == 0 ? false : false
-                font.pointSize: mode == 0 ? 6.6 : 6.6
+                font.pointSize: mode == 0 ? 6 : 6
 
                 onLinkActivated: {
                     console.log("Link activated: " + link)
